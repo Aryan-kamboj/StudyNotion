@@ -48,9 +48,17 @@ const courseSchema = new mongoose.Schema({
         type:Date,
         required:true,
     },
+    ratingCount:{
+        type:Number,
+        required:true,
+    },
+    ratingSum:{
+        type:Number,
+        required:true,
+    },
     reviews:[{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"review"
+        ref:"review",
     }],
     enrolledStudents:[{
         type:mongoose.Schema.Types.ObjectId,

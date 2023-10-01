@@ -1,17 +1,23 @@
 const mongoose = require("mongoose");
 const reviewSchema = new mongoose.Schema({
-    response:String,
+    response:{
+        type:String,
+        required:true,
+    },
     rating:{
         type:Number,
         enum:[1,2,3,4,5],
+        required:true,
     },
-    course:{
+    courseID:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:"course"
+        ref:"course",
+        required:true,
     },
-    user:{
+    userID:{
         type:mongoose.Schema.Types.ObjectId,
         ref:"user",
+        required:true,
     }
 })
 module.exports = mongoose.model("review",reviewSchema)
