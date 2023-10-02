@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken");
 const express = require("express");
+
 const app = express();
 app.use(express.json());
 
@@ -7,7 +8,7 @@ const fileupload = require("express-fileupload");
 app.use(fileupload());
 
 var cookieParser = require('cookie-parser')
-app.use(cookieParser())
+app.use(cookieParser());
 
 const DB = require("./config/database");
 DB.connect();

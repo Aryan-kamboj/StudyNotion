@@ -1,13 +1,13 @@
 require("dotenv").config();
-cloudinary = require("cloudinary");
+const cloudinary = require('cloudinary');
 exports.cloudinaryConnect = ()=>{
     try {
-        cloudinary.config({ 
-            cloud_name: process.env.CLOUD_NAME, 
-            api_key: process.env.CLOUDINARY_API_KEY, 
-            api_secret: process.env.CLOUDINARY_API_SECRET,
-            secure: true 
-          });
+        cloudinary.v2.config({
+        cloud_name: 'studynotion',
+        api_key: '784814815567426',
+        api_secret: '210tXYaA6YKmpxPuvi47sPVKfcg',
+        secure: true,
+        });
     } catch (error) {
         console.log(error);
     }    

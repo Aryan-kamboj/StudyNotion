@@ -64,25 +64,34 @@ const courseSchema = new mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"user"
     }],
+    
+    //sections schema is wrong there needs to be only 2 levels 1 is section and 2 is subsectin which will have only 1 task in it
     sections:[{
         sectionName:String,
-        lessons:[{
-            lessonName:String,
-            lectures:[{
-                lesctureName:String,
-                tasks:[{
-                    taskType:{
-                        type:String,
-                        required:true,
-                    },
-                    taskTitle:String,
-                    taskDescription:String,
-                    playbackTime:Number,
-                }]
+        subSection:[{
+            subSectionName:String,
+                taskType:{
+                    type:String,
+                    required:true,
+                },
+                taskURL:{
+                    type:String,
+                    required:true,
+                },
+                taskTitle:{
+                    type:String,
+                    required:true,
+                },
+                taskDescription:{
+                    type:String,
+                    required:true,
+                },
+                playbackTime:{
+                    type:Number,
+                    required:true,
+                },
             }]
         }]
-    }]
-    
-})
+    })
 
 module.exports = mongoose.model("course",courseSchema);
